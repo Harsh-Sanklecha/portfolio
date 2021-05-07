@@ -491,15 +491,29 @@ body {
     display: none !important;
   }
   .hero-wrapper .hero-bottom-wrapper .hero-bottom {
-    padding-top: 20vh;
+    padding-top: 35vw;
   }
   .hero-wrapper .hero-bottom-wrapper .hero-bottom p {
     font-size: 1.25rem;
     line-height: 2rem;
   }
+  .project-img {
+    height: 50%;
+  }
+  .project-img img {
+    max-width: 100%;
+    position: absolute;
+    top: 0%;
+  }
+  .section:nth-child(2) > .project-wrapper .project-img {
+    top: 10%;
+  }
+  .project-desc h3 {
+    font-size: 3rem;
+  }
   .project-desc p {
-    font-size: 1.25rem;
-    line-height: 2.25rem;
+    font-size: 1rem;
+    line-height: 2rem;
   }
   .services-wrapper .services-card h3 {
     font-size: 3.5rem;
