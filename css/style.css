@@ -371,6 +371,14 @@ body {
   text-transform: uppercase;
 }
 
+.services-wrapper .services-card:hover > h3 {
+  -webkit-transform: skew(10deg);
+          transform: skew(10deg);
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
 .glass-morph-wrap {
   padding: 30vh 6rem 10vh;
   position: relative;
@@ -491,7 +499,7 @@ body {
     display: none !important;
   }
   .hero-wrapper .hero-bottom-wrapper .hero-bottom {
-    padding-top: 35vw;
+    padding-top: 30vw;
   }
   .hero-wrapper .hero-bottom-wrapper .hero-bottom p {
     font-size: 1.25rem;

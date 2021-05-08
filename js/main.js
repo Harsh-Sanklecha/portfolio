@@ -36,6 +36,8 @@ function scrollFunction() {
         $(".last-name").css({ "transform": "Scale(0.7)"});
     }
 }
+
+/* Horizontal Scroll */
 TweenLite.defaultEase = Linear.easeNone;
 var controller = new ScrollMagic.Controller();
 var tl = new TimelineMax();
@@ -60,7 +62,7 @@ function createHorizontal() {
     return new ScrollMagic.Scene({
         triggerElement: "#js-wrapper",
         triggerHook: "onLeave",
-        duration: 2000
+        duration: 1800
     })
         .setPin("#js-wrapper")
         .setTween(actionHorizontal)
@@ -73,18 +75,19 @@ function createHorizontal() {
 
 }
 
+var skewSetter = gsap.quickSetter(".services-card", "skewY", "deg");
+var proxy = {skew:0}
 
-$(window).resize(function () {
+ScrollTrigger.create({
+    onUpdate: self => {
+        var skew = self.getVelocity() / -1000;
 
-    ww = window.innerWidth;
-    slideContainerWidth = slideWidth * noSlides - ww;
+        if(Math.abs(skew) > Math.abs(proxy.skew)){
+            proxy.skew = skew;
 
-
-    horizontal.destroy(true);
-    horizontal = createHorizontal();
-
-    TweenLite.set('#line', { width: slideContainerWidth + ww })
-
-    console.log(ww, slideContainerWidth);
-
+            gsap.to(proxy, {skew:0, duration:1, overwrite:true, onUpdate: ()=> skewSetter(proxy.skew)})
+        }
+    }
 });
+
+gsap.set(".servuces-card",{transformOrigin:"right center", force3D:true});

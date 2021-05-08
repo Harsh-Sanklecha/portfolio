@@ -320,6 +320,12 @@ body {
       font-weight: 600;
       text-transform: uppercase;
     }
+
+    &:hover > h3 {
+      transform: skew(10deg);
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
   }
 }
 
@@ -460,7 +466,7 @@ body {
   }
 
   .hero-wrapper .hero-bottom-wrapper .hero-bottom {
-    padding-top: 35vw;
+    padding-top: 30vw;
 
     p {
       font-size: 1.25rem;
