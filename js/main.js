@@ -1,3 +1,58 @@
+$('.menuBtn').click(function(){
+    this.classList.toggle("active");
+//   alert("WORKS");
+console.log(this);
+    if (this.classList.contains("active")) {
+    gsap.to(".navMenu", {
+    duration: 0.1,
+    display: "flex",
+    ease: "expo.in"
+    });
+    gsap.to(".navBefore", {
+    duration: 0.5,
+    marginLeft: "0",
+    ease: "expo.in"
+    });
+    gsap.to(".nav", {
+    duration: 0.8,
+    marginLeft: "0",
+    delay: 0.3,
+    ease: "expo.in"
+    });
+    gsap.to(".navigation", {
+    duration: 1,
+    opacity: "1",
+    delay: 0.8,
+    ease: "expo.in"
+    });
+} else {
+    gsap.to(".navigation", {
+    duration: 0.2,
+    opacity: "0",
+    ease: "expo.in"
+    });
+    gsap.to(".nav", {
+    duration: 1,
+    marginLeft: "100%",
+    delay: 0.3,
+    ease: "expo.in"
+    });
+    gsap.to(".navBefore", {
+    duration: 1,
+    marginLeft: "100%",
+    delay: 0.5,
+    ease: "expo.in"
+    });
+    gsap.to(".navMenu", {
+    duration: 1,
+    display: "none",
+    delay: 1,
+    ease: "expo.in"
+    });
+}
+});
+
+/* Hero Text Animation */
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
@@ -48,7 +103,7 @@ var noSlides = $(".section").length;
 var slideWidth = $(".section").width();
 var slideContainerWidth = slideWidth * noSlides;
 
-console.log(noSlides, slideWidth, slideContainerWidth, ww);
+// console.log(noSlides, slideWidth, slideContainerWidth, ww);
 
 TweenLite.set('#lineSVG', { width: slideContainerWidth + ww })
 
@@ -74,13 +129,13 @@ function createHorizontal() {
         .addTo(controller);
 
 }
-
+/* Services Scroll */
 var skewSetter = gsap.quickSetter(".services-card", "skewY", "deg");
 var proxy = {skew:0}
 
 ScrollTrigger.create({
     onUpdate: self => {
-        var skew = self.getVelocity() / -1000;
+        var skew = self.getVelocity() / -500;
 
         if(Math.abs(skew) > Math.abs(proxy.skew)){
             proxy.skew = skew;
