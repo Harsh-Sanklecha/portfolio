@@ -70,6 +70,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 5;
+  overflow: hidden;
 
   .navbar-brand {
     color: var(--accent-color);
@@ -102,17 +103,28 @@ body {
   font-weight: 800;
   transition: 0.5s ease;
 
-  & :nth-child(2) {
-    display: none;
-    transform: translateY(-200%);
+  &:focus {
+    color: var(--primary-color-100);
   }
 
-  & .active > span:nth-child(1) {
-    display: none;
+  span {
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+
+  & :nth-child(2) {
+    // display: none;
+    transform: translateY(200%);
+  }
+
+  &.active > span:nth-child(1) {
+    // display: none;
     transform: translateY(-200%);
   }
-  & .active > span:nth-child(2) {
-    display: block;
+  &.active > span:nth-child(2) {
+    // display: block;
+    transform: translateY(0);
   }
 }
 
