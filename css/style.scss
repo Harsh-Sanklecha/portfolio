@@ -72,6 +72,7 @@ body {
         list-style: none;
 
         li {
+          margin: 0.5rem 0;
           font-size: 3rem;
           text-transform: uppercase;
 
@@ -405,12 +406,12 @@ body {
 }
 
 .glass-morph-wrap {
-  padding: 30vh 6rem 10vh;
+  padding: 30vh 5rem 10vh;
   position: relative;
   max-width: 100%;
   overflow: hidden;
 
-  .before-ball {
+  .before-circle {
     position: relative;
     transform: translate(-50%, 60%);
     width: 10rem;
@@ -424,48 +425,81 @@ body {
   }
 
   .glass-morph {
-    padding: 5rem;
+    padding: 2rem;
     position: relative;
     z-index: 1;
     width: 100%;
     border-radius: 30px;
     background-clip: padding-box;
-    background: rgba(255, 255, 255, 0.1);
+    // background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      335deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1)
+    );
     // box-shadow: 0 0 40px var(--primary-color-800);
     backdrop-filter: blur(12px);
 
-    .glass-content {
-      h3 {
-        font-size: 4.5rem;
+    .footer-content {
+      padding: 2rem;
+      margin: 0 1rem;
+
+      .content-desc {
+        margin-top: 2.5rem;
+      }
+
+      h4 {
         font-weight: 600;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+      }
+
+      ul {
+        list-style: none;
         // text-transform: uppercase;
+
+        li {
+          margin: 0.75rem 0;
+        }
+
+        a {
+          color: #fefefe;
+        }
       }
 
       .btn {
-        margin: 1rem 0;
-        padding: 1rem 0;
-        font-size: 1.5rem;
+        width: 100%;
+        border: 1px solid var(--accent-color);
+        text-transform: uppercase;
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: var(--accent-color);
+          color: #fefefe;
+        }
       }
 
       i {
-        margin: 1rem 0.5rem;
-        font-size: 1.4rem;
-        color: var(--primary-color-300);
+        margin: 0 1rem 1rem 0;
+        color: #fefefe;
+        font-size: 1.2rem;
       }
+    }
+
+    .copyright {
+      margin-top: 2rem;
 
       p {
-        word-spacing: 2px;
-        color: var(--primary-color-300);
-
-        a:hover {
-          color: #e46f6f;
-          text-decoration: none;
-        }
+        margin-bottom: 0.25rem;
+        font-size: 0.8rem;
       }
     }
   }
 
-  .after-ball {
+  .after-circle {
     position: absolute;
     transform: translate(20%, -70%);
     right: 0;
@@ -526,6 +560,27 @@ body {
   }
   .services-wrapper {
     padding: 0 1rem !important;
+  }
+
+  .glass-morph-wrap {
+    padding: 30vh 2rem 10vh;
+
+    .glass-morph .footer-content {
+      padding: 1rem 0;
+      margin: 0;
+
+      .content-desc {
+        margin-top: 1.5rem;
+      }
+
+      .btn {
+        width: 11rem;
+      }
+    }
+
+    .copyright {
+      text-align: left !important;
+    }
   }
 }
 
