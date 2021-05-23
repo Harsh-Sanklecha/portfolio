@@ -50,6 +50,32 @@ $(".menuBtn").click(function () {
   }
 });
 
+$('.navMenu .navigation a').click(function(){
+  gsap.to(".navigation", {
+    duration: 0.4,
+    opacity: "0",
+    ease: "expo.in",
+  });
+  gsap.to(".nav", {
+    duration: 0.5,
+    marginLeft: "100%",
+    delay: 0.3,
+    ease: "expo.in",
+  });
+  gsap.to(".navBefore", {
+    duration: 0.5,
+    marginLeft: "100%",
+    delay: 0.8,
+    ease: "expo.in",
+  });
+  gsap.to(".navMenu", {
+    duration: 1,
+    display: "none",
+    delay: 1.3,
+    ease: "expo.in",
+  });
+});
+
 /* Hero Text Animation */
 window.onscroll = function () {
   scrollFunction();
