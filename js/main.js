@@ -1,3 +1,9 @@
+$(window).on("load", function () {
+  setTimeout(()=>{
+    $(".preloader").fadeOut("fast");
+  },500)
+});
+
 $(".menuBtn").click(function () {
   this.classList.toggle("active");
   if (this.classList.contains("active")) {
@@ -50,7 +56,7 @@ $(".menuBtn").click(function () {
   }
 });
 
-$('.navMenu .navigation a').click(function(){
+$(".navMenu .navigation a").click(function () {
   gsap.to(".navigation", {
     duration: 0.4,
     opacity: "0",
