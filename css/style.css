@@ -37,6 +37,23 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a:hover ~ .cursor {
+  width: 100px;
+  height: 100px;
+}
+
 .accent {
   color: var(--accent-color);
 }
